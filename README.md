@@ -5,10 +5,21 @@ This repository contains the diff functionality of the [google-diff-match-patch 
 
 ## [Demo](http://neil.fraser.name/software/diff_match_patch/svn/trunk/demos/demo_diff.html)
 
-## Example usage
+## Example usage CJS
 
 ```javascript
-var Diff = require('text-diff');
+var Diff = require('@wernfried/text-diff');
+
+var diff = new Diff(); // options may be passed to constructor; see below
+var textDiff = diff.main('text1', 'text2'); // produces diff array
+diff.prettyHtml(textDiff); // produces a formatted HTML string
+
+```
+
+## Example usage ESM
+
+```javascript
+import Diff from '@wernfried/text-diff';
 
 var diff = new Diff(); // options may be passed to constructor; see below
 var textDiff = diff.main('text1', 'text2'); // produces diff array
